@@ -1,0 +1,148 @@
+# Test Data Configuration
+
+valid_credentials:
+  username: "admin"
+  password: "admin"
+  email: "test@example.com"
+
+invalid_credentials:
+  - username: "wronguser"
+    password: "wrongpass"
+    expected_error: "Invalid username or password"
+  - username: ""
+    password: "admin"
+    expected_error: "Username is required"
+  - username: "admin"
+    password: ""
+    expected_error: "Password is required"
+
+test_users:
+  admin:
+    username: "admin"
+    password: "admin123"
+    role: "administrator"
+    permissions:
+      - "read"
+      - "write"
+      - "delete"
+  
+  regular_user:
+    username: "user1"
+    password: "user123"
+    role: "user"
+    permissions:
+      - "read"
+  
+  readonly_user:
+    username: "viewer"
+    password: "view123"
+    role: "viewer"
+    permissions:
+      - "read"
+
+form_test_data:
+  registration_form:
+    valid_data:
+      first_name: "John"
+      last_name: "Doe"
+      email: "john.doe@example.com"
+      phone: "+1234567890"
+      address: "123 Main St"
+      city: "New York"
+      country: "USA"
+      zip_code: "10001"
+    
+    invalid_data:
+      - field: "email"
+        value: "invalid-email"
+        expected_error: "Please enter a valid email address"
+      - field: "phone"
+        value: "abc"
+        expected_error: "Please enter a valid phone number"
+      - field: "zip_code"
+        value: "123"
+        expected_error: "Zip code must be 5 digits"
+
+api_endpoints:
+  auth:
+    login: "/api/login"
+    logout: "/api/logout"
+    refresh: "/api/refresh"
+  
+  users:
+    get_users: "/api/users"
+    create_user: "/api/users"
+    get_user: "/api/users/{id}"
+    update_user: "/api/users/{id}"
+    delete_user: "/api/users/{id}"
+  
+  products:
+    get_products: "/api/products"
+    create_product: "/api/products"
+    get_product: "/api/products/{id}"
+    update_product: "/api/products/{id}"
+    delete_product: "/api/products/{id}"
+
+performance_testing:
+  load_test:
+    concurrent_users: 100
+    duration_seconds: 300
+    ramp_up_time: 30
+  
+  stress_test:
+    concurrent_users: 500
+    duration_seconds: 600
+    ramp_up_time: 60
+
+security_testing:
+  sql_injection_payloads:
+    - "' OR '1'='1"
+    - "'; DROP TABLE users; --"
+    - "' UNION SELECT * FROM users --"
+  
+  xss_payloads:
+    - "<script>alert('XSS')</script>"
+    - "<img src=x onerror=alert('XSS')>"
+    - "javascript:alert('XSS')"
+  
+  path_traversal_payloads:
+    - "../../../etc/passwd"
+    - "..\\..\\..\\windows\\win.ini"
+
+browser_configurations:
+  desktop:
+    - browser: "chrome"
+      resolution: "1920x1080"
+    - browser: "firefox"
+      resolution: "1920x1080"
+    - browser: "edge"
+      resolution: "1920x1080"
+  
+  mobile:
+    - device: "iPhone 12"
+      resolution: "390x844"
+      user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
+    - device: "Samsung Galaxy S20"
+      resolution: "360x800"
+      user_agent: "Mozilla/5.0 (Linux; Android 10; SM-G980F)"
+
+test_categories:
+  smoke_tests:
+    - "test_valid_login"
+    - "test_homepage_load"
+    - "test_api_health"
+  
+  regression_tests:
+    - "test_invalid_login"
+    - "test_form_validations"
+    - "test_api_error_handling"
+  
+  security_tests:
+    - "test_sql_injection_prevention"
+    - "test_xss_prevention"
+    - "test_auth_rate_limiting"
+  
+  performance_tests:
+    - "test_page_load_time"
+    - "test_api_response_time"
+    - "test_concurrent_users"

@@ -1,0 +1,236 @@
+{
+  "application": "Test Application",
+  "environment": "QA",
+  "description": "Test user data",
+  "last_updated": "2024-01-15",
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "Admin@2024",
+      "email": "admin@testcorp.com",
+      "first_name": "Admin",
+      "role": "administrator",
+      "permissions": [
+        "read",
+        "write",
+        "delete",
+        "administer",
+        "configure",
+        "audit"
+      ],
+      "is_active": true,
+      "department": "IT",
+      "employee_id": "EMP001",
+      "hire_date": "2023-01-15",
+      "two_factor_enabled": true,
+      "last_login": "2024-01-14T10:30:00Z",
+      "failed_login_attempts": 0,
+      "account_locked": false,
+      "password_expiry_date": "2024-04-15"
+    },
+    {
+      "id": 2,
+      "username": "engineer_qa",
+      "password": "Engineer@123",
+      "email": "qa.engineer@testcorp.com",
+      "first_name": "Quality",
+      "last_name": "Engineer",
+      "role": "qa_engineer",
+      "permissions": [
+        "read",
+        "write",
+        "execute_tests",
+        "view_reports",
+        "log_defects"
+      ],
+      "is_active": true,
+      "department": "Quality Assurance",
+      "employee_id": "EMP002",
+      "hire_date": "2023-03-20",
+      "two_factor_enabled": true,
+      "last_login": "2024-01-14T14:45:00Z",
+      "failed_login_attempts": 1,
+      "account_locked": false,
+      "password_expiry_date": "2024-03-20"
+    },
+    {
+      "id": 3,
+      "username": "dev_operator",
+      "password": "DevOp@Secure1",
+      "email": "devops@testcorp.com",
+      "first_name": "DevOps",
+      "last_name": "Operator",
+      "role": "devops",
+      "permissions": [
+        "read",
+        "write",
+        "deploy",
+        "monitor",
+        "maintain"
+      ],
+      "is_active": true,
+      "department": "DevOps",
+      "employee_id": "EMP003",
+      "hire_date": "2023-05-10",
+      "two_factor_enabled": true,
+      "last_login": "2024-01-13T09:15:00Z",
+      "failed_login_attempts": 0,
+      "account_locked": false,
+      "password_expiry_date": "2024-05-10"
+    },
+    {
+      "id": 4,
+      "username": "finance_user",
+      "password": "Finance$2024",
+      "email": "finance.user@testcorp.com",
+      "first_name": "Finance",
+      "last_name": "User",
+      "role": "finance",
+      "permissions": [
+        "read",
+        "write_financial",
+        "approve_payments",
+        "view_reports"
+      ],
+      "is_active": true,
+      "department": "Finance",
+      "employee_id": "EMP004",
+      "hire_date": "2023-07-01",
+      "two_factor_enabled": false,
+      "last_login": "2024-01-12T16:30:00Z",
+      "failed_login_attempts": 2,
+      "account_locked": false,
+      "password_expiry_date": "2024-07-01"
+    },
+    {
+      "id": 5,
+      "username": "readonly_viewer",
+      "password": "ViewOnly@123",
+      "email": "viewer@testcorp.com",
+      "first_name": "Read",
+      "last_name": "Only",
+      "role": "viewer",
+      "permissions": [
+        "read"
+      ],
+      "is_active": true,
+      "department": "Operations",
+      "employee_id": "EMP005",
+      "hire_date": "2023-08-15",
+      "two_factor_enabled": false,
+      "last_login": "2024-01-10T11:20:00Z",
+      "failed_login_attempts": 0,
+      "account_locked": false,
+      "password_expiry_date": "2024-08-15"
+    },
+    {
+      "id": 6,
+      "username": "inactive_user",
+      "password": "Inactive@123",
+      "email": "inactive.user@testcorp.com",
+      "first_name": "Inactive",
+      "last_name": "User",
+      "role": "former_employee",
+      "permissions": [],
+      "is_active": false,
+      "department": "Former",
+      "employee_id": "EMP006",
+      "hire_date": "2022-06-01",
+      "termination_date": "2023-12-31",
+      "two_factor_enabled": false,
+      "last_login": "2023-12-30T10:00:00Z",
+      "failed_login_attempts": 0,
+      "account_locked": true,
+      "password_expiry_date": "2023-12-31"
+    },
+    {
+      "id": 7,
+      "username": "locked_user",
+      "password": "Locked@123",
+      "email": "locked.user@testcorp.com",
+      "first_name": "Locked",
+      "last_name": "Account",
+      "role": "user",
+      "permissions": [
+        "read",
+        "write"
+      ],
+      "is_active": true,
+      "department": "Support",
+      "employee_id": "EMP007",
+      "hire_date": "2023-09-01",
+      "two_factor_enabled": false,
+      "last_login": "2024-01-14T08:45:00Z",
+      "failed_login_attempts": 5,
+      "account_locked": true,
+      "password_expiry_date": "2024-09-01",
+      "lock_reason": "Too many failed login attempts"
+    },
+    {
+      "id": 8,
+      "username": "expired_password",
+      "password": "Expired@2023",
+      "email": "expired.pwd@testcorp.com",
+      "first_name": "Password",
+      "last_name": "Expired",
+      "role": "user",
+      "permissions": [
+        "read"
+      ],
+      "is_active": true,
+      "department": "HR",
+      "employee_id": "EMP008",
+      "hire_date": "2023-02-01",
+      "two_factor_enabled": false,
+      "last_login": "2023-12-31T15:30:00Z",
+      "failed_login_attempts": 0,
+      "account_locked": false,
+      "password_expiry_date": "2023-12-31",
+      "password_expired": true
+    }
+  ],
+  "test_scenarios": {
+    "valid_login": {
+      "description": "Successful login with valid credentials",
+      "users": [1, 2, 3, 4, 5],
+      "expected_result": "Login successful, redirected to dashboard"
+    },
+    "invalid_login": {
+      "description": "Failed login with invalid credentials",
+      "users": [6, 7, 8],
+      "expected_result": "Login failed with appropriate error message"
+    },
+    "role_based_access": {
+      "description": "Test role-based access control",
+      "admin_access": [1],
+      "engineer_access": [2],
+      "finance_access": [4],
+      "readonly_access": [5]
+    },
+    "security_tests": {
+      "description": "Users for security testing scenarios",
+      "inactive_account": 6,
+      "locked_account": 7,
+      "expired_password": 8
+    }
+  },
+  "password_policy": {
+    "min_length": 8,
+    "require_uppercase": true,
+    "require_lowercase": true,
+    "require_numbers": true,
+    "require_special_chars": true,
+    "max_age_days": 90,
+    "history_size": 5,
+    "max_failed_attempts": 5,
+    "lockout_duration_minutes": 30
+  },
+  "additional_notes": [
+    "All passwords are for testing purposes only",
+    "Email addresses are fictional",
+    "User data simulates real-world scenarios for comprehensive testing",
+    "Includes edge cases for security and validation testing"
+
+  ]
+}

@@ -1,0 +1,63 @@
+2024-01-15 10:30:15,123 - INFO - TestLogger - ========================================
+2024-01-15 10:30:15,124 - INFO - TestLogger - Starting test execution
+2024-01-15 10:30:15,124 - INFO - TestLogger - Environment: qa
+2024-01-15 10:30:15,125 - INFO - TestLogger - Browser: chrome
+2024-01-15 10:30:15,125 - INFO - TestLogger - Headless mode: True
+2024-01-15 10:30:15,126 - INFO - TestLogger - Base URL: https://demo.testfire.net
+2024-01-15 10:30:15,126 - INFO - TestLogger - ========================================
+
+2024-01-15 10:30:15,567 - INFO - src.core.browser_factory - Initializing Chrome browser factory
+2024-01-15 10:30:16,234 - INFO - src.core.browser_factory - Chrome driver created with advanced options
+2024-01-15 10:30:16,235 - INFO - src.pages.login_page - Navigated to login page: https://demo.testfire.net/login.aspx
+
+2024-01-15 10:30:16,789 - INFO - tests.ui.test_login - Starting test: test_valid_login
+2024-01-15 10:30:16,790 - INFO - src.pages.login_page - Attempting login with username: admin
+2024-01-15 10:30:16,890 - INFO - src.pages.base_page - Sent text 'admin' to element: ('id', 'uid')
+2024-01-15 10:30:16,945 - INFO - src.pages.base_page - Sent text 'admin123' to element: ('id', 'passw')
+2024-01-15 10:30:16,980 - INFO - src.pages.base_page - Clicked element: ('name', 'btnSubmit')
+2024-01-15 10:30:18,123 - INFO - src.pages.login_page - Login successful
+2024-01-15 10:30:18,124 - INFO - src.pages.base_page - Screenshot saved: reports/screenshots/login_success.png
+2024-01-15 10:30:18,125 - INFO - tests.ui.test_login - Test passed: test_valid_login
+
+2024-01-15 10:30:18,567 - INFO - tests.ui.test_login - Starting test: test_invalid_login
+2024-01-15 10:30:18,568 - INFO - src.pages.login_page - Attempting login with username: invalid_user
+2024-01-15 10:30:18,678 - INFO - src.pages.login_page - Login failed with error: Invalid username or password
+2024-01-15 10:30:18,679 - INFO - src.pages.base_page - Screenshot saved: reports/screenshots/invalid_login_invalid_user.png
+2024-01-15 10:30:18,680 - INFO - tests.ui.test_login - Test passed: test_invalid_login
+
+2024-01-15 10:30:19,234 - INFO - tests.api.test_auth_api - Starting test: test_successful_auth
+2024-01-15 10:30:19,235 - INFO - src.core.api_client - Making POST request to https://jsonplaceholder.typicode.com/api/login
+2024-01-15 10:30:19,456 - INFO - src.core.api_client - Response status: 200
+2024-01-15 10:30:19,457 - INFO - src.core.api_client - Response validation successful
+2024-01-15 10:30:19,458 - INFO - tests.api.test_auth_api - Test passed: test_successful_auth
+
+2024-01-15 10:30:19,789 - INFO - tests.ui.test_login - Starting test: test_sql_injection_prevention
+2024-01-15 10:30:19,890 - INFO - src.pages.login_page - Testing SQL injection: ' OR '1'='1
+2024-01-15 10:30:20,123 - INFO - src.pages.login_page - SQL injection attempt blocked successfully
+2024-01-15 10:30:20,124 - INFO - tests.ui.test_login - Test passed: test_sql_injection_prevention
+
+2024-01-15 10:30:20,567 - WARNING - utilities.bug_reporter - Bug report created: BUG-20240115103020
+2024-01-15 10:30:20,568 - INFO - utilities.bug_reporter - Created bug report: reports/bugs/BUG-20240115103020.md
+
+2024-01-15 10:30:21,123 - ERROR - tests.ui.test_login - Test failed: test_form_validations
+2024-01-15 10:30:21,124 - ERROR - src.pages.base_page - Element not found: ('id', 'validation_message')
+2024-01-15 10:30:21,125 - INFO - src.pages.base_page - Screenshot saved: reports/screenshots/failure_test_form_validations_20240115_103021.png
+2024-01-15 10:30:21,126 - INFO - utilities.bug_reporter - Bug report created for failed test: test_form_validations
+
+2024-01-15 10:30:22,789 - INFO - utilities.postman_runner - Running Postman collection: postman/api_collection.json
+2024-01-15 10:30:23,456 - INFO - utilities.postman_runner - Postman collection executed successfully
+
+2024-01-15 10:30:24,123 - INFO - TestLogger - ========================================
+2024-01-15 10:30:24,124 - INFO - TestLogger - Test execution completed
+2024-01-15 10:30:24,125 - INFO - TestLogger - Total tests: 15
+2024-01-15 10:30:24,126 - INFO - TestLogger - Passed: 14
+2024-01-15 10:30:24,127 - INFO - TestLogger - Failed: 1
+2024-01-15 10:30:24,128 - INFO - TestLogger - Skipped: 0
+2024-01-15 10:30:24,129 - INFO - TestLogger - Duration: 00:09:08.005
+2024-01-15 10:30:24,130 - INFO - TestLogger - HTML Report: reports/report_20240115_103024.html
+2024-01-15 10:30:24,131 - INFO - TestLogger - Allure Report: reports/allure-report
+2024-01-15 10:30:24,132 - INFO - TestLogger - ========================================
+
+2024-01-15 10:30:25,123 - INFO - src.core.browser_factory - Closing browser session
+2024-01-15 10:30:25,234 - INFO - src.core.api_client - Closing API session
+2024-01-15 10:30:25,345 - INFO - TestLogger - Cleanup completed successfully
