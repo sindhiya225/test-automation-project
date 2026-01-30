@@ -1,4 +1,4 @@
-# Advanced Automated Testing Framework
+# Automated Testing Framework
 
 ## Overview
 An enterprise-grade testing framework combining UI testing (Selenium/Playwright), API testing (Postman/requests), and advanced reporting. 
@@ -23,42 +23,119 @@ An enterprise-grade testing framework combining UI testing (Selenium/Playwright)
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone <sindhiya225/test-automation-project>
 cd advanced-testing-framework
+```
 
+2. **Install Python dependencies**
 
-Install Python dependencies
-
-bash
+```bash
 pip install -r requirements.txt
-Install Playwright browsers
+```
 
-bash
+3. **Install Playwright browsers**
+
+```bash
 playwright install
-Install Newman (for Postman)
+```
 
-bash
+4. **Install Newman (for Postman)**
+
+```bash
 npm install -g newman
-Set up environment variables
+```
 
-bash
+5. **Set up environment variables**
+
+```bash
 cp .env.example .env
-# Edit .env with your configuration
-Project Structure
-text
+```
+
+
+## Project Structure
+```
 advanced-testing-framework/
-├── src/              # Core framework code
-├── tests/            # Test suites
-├── test_data/        # Test data and configurations
-├── utilities/        # Utility modules
-├── reports/          # Test reports and artifacts
-└── docker/           # Docker configurations
-Running Tests
-Run all tests
-bash
+│
+├── README.md
+├── requirements.txt
+├── pytest.ini
+├── conftest.py
+├── .env.example
+│
+├── src/
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── browser_factory.py
+│   │   ├── api_client.py
+│   │   ├── logger.py
+│   │   └── utilities.py
+│   │
+│   ├── pages/
+│   │   ├── __init__.py
+│   │   ├── base_page.py
+│   │   ├── login_page.py
+│   │   └── dashboard_page.py
+│   │
+│   └── api/
+│       ├── __init__.py
+│       ├── endpoints.py
+│       └── schemas.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── test_login.py
+│   │   ├── test_forms.py
+│   │   ├── test_validations.py
+│   │   └── test_dashboard.py
+│   │
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── test_auth_api.py
+│   │   ├── test_user_api.py
+│   │   └── test_data_validation.py
+│   │
+│   └── integration/
+│       ├── __init__.py
+│       └── test_ui_api_integration.py
+│
+├── test_data/
+│   ├── __init__.py
+│   ├── users.json
+│   └── test_cases.yaml
+│
+├── config/
+│   ├── __init__.py
+│   ├── settings.py
+│   └── urls.py
+│
+├── reports/
+│   ├── assets/
+│   └── archive/
+│
+├── logs/
+│   └── test_execution.log
+│
+├── docker/
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+└── utilities/
+    ├── __init__.py
+    ├── bug_reporter.py
+    ├── screenshot_manager.py
+    └── postman_runner.py
+```
+
+**Run all tests**
+```bash
 pytest tests/ -v
-Run specific test types
-bash
+```
+
+**Run specific test types**
+```bash
 # UI tests only
 pytest tests/ui/ -v -m ui
 
@@ -70,12 +147,29 @@ pytest tests/ -v -m smoke
 
 # Security tests
 pytest tests/ -v -m security
+```
 
+**Docker Execution**
 
-Docker Execution
-Using Docker Compose
-bash
+```bash
 # Start Selenium Grid and run tests
 docker-compose up --build
+```
 
-# View reports at http://localhost:8080
+**Generate Reports**
+
+```bash
+# HTML Report
+pytest tests/ -v --html=reports/report.html --self-contained-html
+
+# Allure Report
+pytest tests/ -v --alluredir=reports/allure-results
+allure generate reports/allure-results -o reports/allure-report --clean
+allure open reports/allure-report
+
+# JSON Report
+pytest tests/ -v --json=reports/report.json
+```
+
+## License
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
